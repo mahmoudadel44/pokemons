@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 //Components
@@ -11,12 +11,11 @@ import PokemonImg from "../assets/pokemonimg.jpg";
 const Home = () => {
   const [searchField, setSearchField] = useState("");
   const pokemonsData = useSelector((state) => state.PokemonsList.Pokemons);
-  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  const loadPokemons = () => {
+  const loadPokemons = useCallback(() => {
     dispatch(getPokemons);
-  };
+  }, [dispatch]);
 
   const handleChange = (e) => {
     setSearchField(e.target.value);
@@ -24,20 +23,19 @@ const Home = () => {
 
   useEffect(() => {
     loadPokemons();
-    setLoading(false);
-  }, []);
+  }, [loadPokemons]);
 
   const filteredPokemons = pokemonsData.filter((pokemon) =>
     pokemon.name.includes(searchField)
   );
   return (
-      <>
-        <div className="pokemonImgContent">
-          <img src={PokemonImg} alt="pokemon" width={180} height={180} />
-        </div>
-        <SearchBox handleChange={handleChange} placeholder="search pokemon" />
-        <CardList pokemons={filteredPokemons} />
-      </>
+    <>
+      <div className="pokemonImgContent">
+        <img src={PokemonImg} alt="pokemon" width={180} height={180} />
+      </div>
+      <SearchBox handleChange={handleChange} placeholder="search pokemon" />
+      <CardList pokemons={filteredPokemons} />
+    </>
   );
 };
 

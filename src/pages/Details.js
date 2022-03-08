@@ -13,7 +13,7 @@ export const Details = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPokemonsDetails(myPathname));
-  }, []);
+  }, [dispatch,myPathname]);
   return (
     <DetailsCard PokemonsDetails={PokemonsDetails} key={PokemonsDetails.id} />
   );
