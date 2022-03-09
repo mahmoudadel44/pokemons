@@ -49,4 +49,9 @@
       }
     }
   }
+  @media(max-width:576px){
+    .detailsCard{
+      min-width: 340px;
+    }
+  }
 }
