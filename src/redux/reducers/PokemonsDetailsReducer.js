@@ -4,6 +4,7 @@ const initialState = {
   PokemonsDetails: null,
   loading: true,
 };
+
 const PokemonsDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_POKEMONS_DETAILS:

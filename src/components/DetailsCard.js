@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DetailsCard = ({ PokemonsDetails }) => {
+  
   return (
     <div className="deatilsCardContainer animate__animated animate__zoomIn">
       <div className="detailsCard">

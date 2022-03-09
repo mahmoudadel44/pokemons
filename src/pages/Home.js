@@ -33,12 +33,14 @@ const Home = () => {
   const filteredPokemons = pokemonsData.filter((pokemon) =>
     pokemon.name.includes(searchField)
   );
+  
   if (!loading && !pokemonsData) {
     return <NotFound />;
   }
   if (loading) {
     return <Spinner />;
   }
+
   return (
     <>
       <div className="pokemonImgContent animate__animated animate__fadeInDown">

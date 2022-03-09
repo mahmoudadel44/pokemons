@@ -7,7 +7,6 @@ export const getPokemonsDetails = (text) => async (dispatch) => {
     await axios
       .get(`https://pokeapi.co/api/v2/pokemon/${text}`)
       .then((response) => {
-        console.log("response", response.data);
         dispatch({
           type: types.GET_POKEMONS_DETAILS,
           payload: response.data,

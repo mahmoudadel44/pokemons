@@ -29,6 +29,7 @@ export const Details = () => {
   if (loading) {
     return <Spinner />;
   }
+  
   return (
     <DetailsCard PokemonsDetails={pokemonsDetails} key={pokemonsDetails.id} />
   );

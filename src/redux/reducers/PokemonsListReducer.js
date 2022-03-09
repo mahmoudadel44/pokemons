@@ -4,6 +4,7 @@ const initialState = {
   Pokemons: [],
   loading: true,
 };
+
 const PokemonsListReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_POKEMONS_LIST:

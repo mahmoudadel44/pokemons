@@ -1,6 +1,7 @@
 import React from "react";
 
 const Spinner = () => {
+  
   return (
     <ul className="loader">
       <li></li>
