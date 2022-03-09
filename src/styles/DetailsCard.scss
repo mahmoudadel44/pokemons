@@ -32,14 +32,14 @@
       align-items: center;
       flex-direction: column;
       margin-top: 20px;
-      .detailsCardImg{
-        width: 150px;
+      .detailsCardImg {
+        width: 140px;
         height: 150px;
       }
-      @media(max-width:576px){
-        .detailsCardImg{
-        width: 200px;
-        height: 200px;
+      @media (max-width: 576px) {
+        .detailsCardImg {
+          width: 160px;
+          height: 160px;
         }
       }
       h4 {
@@ -59,8 +59,8 @@
       }
     }
   }
-  @media(max-width:576px){
-    .detailsCard{
+  @media (max-width: 576px) {
+    .detailsCard {
       min-width: 340px;
     }
   }
