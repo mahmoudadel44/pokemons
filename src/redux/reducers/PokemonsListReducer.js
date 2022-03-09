@@ -2,7 +2,7 @@ import * as types from "../types/types";
 
 const initialState = {
   Pokemons: [],
-  loading: false,
+  loading: true,
 };
 const PokemonsListReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -18,7 +18,7 @@ const PokemonsListReducer = (state = initialState, action) => {
     case types.LOADING:
       return {
         ...state,
-        loading: true,
+        loading: !state.loading,
       };
     default:
       return state;

@@ -3,7 +3,7 @@ import React from "react";
 //Components
 import PokemonsCard from "./PokemonsCard";
 
-const CardList = ({ pokemons, index }) => {
+const CardList = ({ pokemons }) => {
   return (
     <div className="card-list">
       {pokemons.map((pokemon) => (

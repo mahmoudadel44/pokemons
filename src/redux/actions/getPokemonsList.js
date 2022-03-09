@@ -3,6 +3,7 @@ import * as types from "../types/types";
 
 export const getPokemons = async (dispatch) => {
   try {
+    dispatch({ type: types.LOADING });
     await axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=100")
       .then((response) => {
@@ -12,6 +13,7 @@ export const getPokemons = async (dispatch) => {
         });
       });
   } catch (error) {
+    dispatch({ type: types.LOADING });
     console.log("errrrrrrrrrrrr");
   }
 };

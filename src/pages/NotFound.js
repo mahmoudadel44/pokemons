@@ -1,10 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+
+//images
+import NotFoundImg from "../assets/notFoundImg.jpg";
 
 const NotFound = () => {
   return (
-    <div>Page Not Foundddddddddddddddddddddddddd</div>
-  )
-}
+    <div className="notFoundContainer">
+      <img src={NotFoundImg} alt="notfoundimg" height={500} width={500} />
 
-export default NotFound
+      <Link to={"/pokemon"}>Go To Pokemons</Link>
+    </div>
+  );
+};
 
+export default NotFound;

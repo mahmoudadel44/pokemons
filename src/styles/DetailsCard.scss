@@ -19,11 +19,12 @@
       transform: scale(1.04);
       transition: 0.8s all ease-in-out;
     }
-    .closeBtn {
+    a {
       font-size: 30px;
       font-weight: bold;
       text-align: right;
       margin-right: 10px;
+      color: #000;
     }
     .pokemonWithTitle {
       display: flex;

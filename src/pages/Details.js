@@ -1,20 +1,35 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+//Components
 import DetailsCard from "../components/DetailsCard";
+import Spinner from "../components/Spinner";
+import NotFound from "./NotFound";
+
 import { getPokemonsDetails } from "../redux/actions/getPokemonsDetails";
 
 export const Details = () => {
   let { pathname } = window.location;
-  let myPathname = pathname.replace("/", "");
+  let pokemonPathname = pathname.replace("/", "");
 
-  const PokemonsDetails = useSelector(
+  const pokemonsDetails = useSelector(
     (state) => state.PokemonsDetails.PokemonsDetails
   );
+  const loading = useSelector((state) => state.PokemonsDetails.loading);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPokemonsDetails(myPathname));
-  }, [dispatch,myPathname]);
+    dispatch(getPokemonsDetails(pokemonPathname.split("/")[1]));
+  }, [dispatch, pokemonPathname]);
+
+  if (!loading && !pokemonsDetails) {
+    return <NotFound />;
+  }
+
+  if (loading) {
+    return <Spinner />;
+  }
   return (
-    <DetailsCard PokemonsDetails={PokemonsDetails} key={PokemonsDetails.id} />
+    <DetailsCard PokemonsDetails={pokemonsDetails} key={pokemonsDetails.id} />
   );
 };

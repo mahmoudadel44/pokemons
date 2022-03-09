@@ -1,15 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DetailsCard = ({ PokemonsDetails }) => {
-  const goToList = () => {
-    window.location.replace("/");
-  };
   return (
-    <div className="deatilsCardContainer">
+    <div className="deatilsCardContainer animate__animated animate__zoomIn">
       <div className="detailsCard">
-        <div className="closeBtn" onClick={() => goToList()}>
+        <Link className="closeBtn" to={"/"}>
           <span>&times;</span>
-        </div>
+        </Link>
         <div className="pokemonWithTitle">
           <div>
             <img

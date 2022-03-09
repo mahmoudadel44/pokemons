@@ -1,7 +1,8 @@
 import * as types from "../types/types";
 
 const initialState = {
-  PokemonsDetails: [],
+  PokemonsDetails: null,
+  loading: true,
 };
 const PokemonsDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -9,6 +10,12 @@ const PokemonsDetailsReducer = (state = initialState, action) => {
       return {
         ...state,
         PokemonsDetails: action.payload,
+        loading: false,
+      };
+    case types.LOADING:
+      return {
+        ...state,
+        loading: !state.loading,
       };
     default:
       return state;

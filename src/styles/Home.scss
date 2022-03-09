@@ -2,4 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
+}
+
+.countContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: bold;
+  color: #474747;
+  font-size: 18px;
+  margin-bottom: 18px;
 }
