@@ -13,8 +13,7 @@ const DetailsCard = ({ PokemonsDetails }) => {
             <img
               src={PokemonsDetails?.sprites?.front_default}
               alt="pokemonImg"
-              width={120}
-              height={120}
+              className="detailsCardImg"
             />
           </div>
           <h4>{PokemonsDetails.name}</h4>
