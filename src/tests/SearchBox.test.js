@@ -7,9 +7,9 @@ test("Search box rendered correctly", () => {
   const { queryByPlaceholderText, getByPlaceholderText } = render(
     <SearchBox placeholder={"mahmoud"} handleChange={onChange} />
   );
-  
+
   expect(queryByPlaceholderText("mahmoud")).toBeTruthy();
-  
+
   const input = getByPlaceholderText("mahmoud");
   fireEvent.change(input, { target: { value: "adel" } });
   expect(onChange).toBeCalledTimes(1);
