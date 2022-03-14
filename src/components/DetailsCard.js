@@ -27,7 +27,7 @@ const DetailsCard = ({ PokemonsDetails }) => {
             <span>Type: </span>
             <ul>
               {PokemonsDetails?.types?.map((type) => (
-                <li>{type.type.name}</li>
+                <li key={type.type.name}>{type.type.name}</li>
               ))}
             </ul>
           </li>{" "}
